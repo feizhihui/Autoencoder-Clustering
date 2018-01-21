@@ -20,7 +20,7 @@ param['nthread'] = 8
 plst = list(param.items())
 plst += [('eval_metric', 'logloss')]
 evallist = [(dtest, 'eval'), (dtrain, 'train')]
-model = xgb.train(plst, dtrain, num_round, evallist)
+model = xgb.train(plst, dtrain, num_round, evallist, early_stopping_rounds=10)
 
 sub_test_X = xgb.DMatrix(test_X.reshape([-1, 183 * 234]))
 y_pred = model.predict(sub_test_X)
