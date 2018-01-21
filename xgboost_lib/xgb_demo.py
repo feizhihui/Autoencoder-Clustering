@@ -29,3 +29,5 @@ auc = roc_auc_score(test_Y, y_pred)
 print(auc)
 print(y_pred[:20])
 print(test_Y[:20])
+
+# xgb.plot_tree(model, num_trees=0, rankdir='LR')
